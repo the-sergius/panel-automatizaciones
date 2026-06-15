@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Panel de Automatizaciones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css')}}">
+</head>
+<body>
+
+<header>
+    <h1>Panel de Automatizaciones</h1>
+</header>
+
+<section id="lista">
+</section>
+    <script>
+        const contenedor = document.getElementById("lista");
+        elementoHTML = "";
+        for (let i = 1; i <= 5; i++) {
+            elementoHTML += "<div class='card'>"
+            elementoHTML += "<h2>Automatización</h2>"
+            elementoHTML += "<p>Scripts para automatizar procesos</p>"
+            elementoHTML += "<button onclick='hireService(1)'>Solicitar</button>"
+            elementoHTML += "</div>";
+
+    }
+    contenedor.innerHTML = elementoHTML;   
+        </script>
+
+</body>
+</html>
