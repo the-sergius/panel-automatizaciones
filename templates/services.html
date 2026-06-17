@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Panel de Automatizaciones</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css')}}">
-</head>
-<body>
-
-<header>
-    <h1>Panel de Automatizaciones</h1>
-</header>
-
-<section id="lista">
-</section>
-    {% for servicio in servicios %}
+{% extends 'layout.html' %}
+{% block title %}Panel de Automatizaciones{% endblock %}
+{% block body %}
+{% for service in services %}
     <div class='card'>
-            <h2>{{servicio.title}}</h2>
-            <p>{{servicio.description}}<p>
-            <button onclick='hireService(1)'>Seleccionar</button>
-            </div>
-            {% endfor %}
+        <h2>rdges</h2>
+        <p>sdfgp>
+        <button onclick='hireService(1)'>Seleccionar</button>
+    </div>
+{% endfor %}
     
-</body>
-</html>
+{% endblock %}

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, url_for, redirect
 
 app = Flask(__name__)
 
@@ -18,14 +18,14 @@ def services():
         "description": "Panel de Automatizaciones",
         "id": 2
         }]
-    return render_template('services.html', servicios=services)
+    return render_template('services.html', services=services)
 
 @app.route('/login', methods=['POST'])
 def login():
     if request.form['password'] != '':
         return jsonify({'message': 'Invalid credentials'}), 401
     else:
-        return jsonify({'message': 'Login successful!'}), 200
+        return redirect(url_for('services'))
 
 if __name__ == '__main__':
     app.run(debug=True)
