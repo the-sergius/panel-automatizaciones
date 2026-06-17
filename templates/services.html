@@ -12,19 +12,13 @@
 
 <section id="lista">
 </section>
-    <script>
-        const contenedor = document.getElementById("lista");
-        elementoHTML = "";
-        for (let i = 1; i <= 5; i++) {
-            elementoHTML += "<div class='card'>"
-            elementoHTML += "<h2>Automatización</h2>"
-            elementoHTML += "<p>Scripts para automatizar procesos</p>"
-            elementoHTML += "<button onclick='hireService(1)'>Solicitar</button>"
-            elementoHTML += "</div>";
-
-    }
-    contenedor.innerHTML = elementoHTML;   
-        </script>
-
+    {% for servicio in servicios %}
+    <div class='card'>
+            <h2>{{servicio.title}}</h2>
+            <p>{{servicio.description}}<p>
+            <button onclick='hireService(1)'>Seleccionar</button>
+            </div>
+            {% endfor %}
+    
 </body>
 </html>

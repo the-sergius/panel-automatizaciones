@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css')}}">
-</head>
-<body>
-
+{% extends 'layout.html' %}
+{% block title %}Panel de Automatizaciones{% endblock %}
+{% block body %}
 <header>
-    <h1>Login</h1>
-</header>
+        <h1>Panel de Automatizaciones</h1>
+    </header>
 
-<form id="login" action="/login" method="POST">
-    <input type="password" name="password" placeholder="Password">
-    <button type="submit">Login</button>
-</form>
-
-</body>
-</html>
+    <form id="login" action="/login" method="POST">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>
+{% endblock %}
