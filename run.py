@@ -1,31 +1,8 @@
-from flask import Flask, render_template, jsonify, request, url_for, redirect
+from app import create_app
 
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route("/services")
-def services():
-    services=[{
-        "title": "Panel de Automatizaciones",
-        "description": "Panel de Automatizaciones",
-        "id": 1
-        },
-        {
-        "title": "Panel de Automatizaciones",
-        "description": "Panel de Automatizaciones",
-        "id": 2
-        }]
-    return render_template('services.html', services=services)
-
-@app.route('/login', methods=['POST'])
-def login():
-    if request.form['password'] != '':
-        return jsonify({'message': 'Invalid credentials'}), 401
-    else:
-        return redirect(url_for('services'))
+# Creamos la instancia de la aplicación Flask
+app = create_app()
 
 if __name__ == '__main__':
+    # Arranca el servidor local de desarrollo
     app.run(debug=True)
