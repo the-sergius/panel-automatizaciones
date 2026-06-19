@@ -1,0 +1,23 @@
+{% extends 'back/layout.html' %}
+{% block title %}Cuadro de Mando{% endblock %}
+{% block body %}
+<header>
+        <h1>Cuadro de Mando</h1>
+    </header>
+
+    {% if not existadmin %}
+        <form id="createAdmin" action="/admin" method="POST">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" placeholder="Repeat Password">
+            <button type="submit">Create Admin</button>
+        </form>
+    {% else %}
+        <h2>Ya existe un administrador</h2>
+        <form id="login" action="/login" method="POST">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+    {% endif %}
+{% endblock %}
