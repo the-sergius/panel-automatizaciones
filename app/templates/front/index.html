@@ -4,7 +4,10 @@ endblock %} {% block body %} {% for service in services %}
   <h2>{{service.title}}</h2>
   <p>
     {{service.description}}
-    <button onclick="window.location.href = '/services/{{service.id}}';">
+    <button
+      data-url="{{ url_for('front_office.services', id=service.id) }}"
+      onclick="window.location.href = this.getAttribute('data-url')"
+    >
       Seleccionar
     </button>
   </p>
