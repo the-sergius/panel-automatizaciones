@@ -1,12 +1,12 @@
-{% extends 'front/layout.html' %}
-{% block title %}Panel de Automatizaciones{% endblock %}
-{% block body %}
-{% for service in services %}
-    <div class='card'>
-        <h2>rdges</h2>
-        <p>sdfgp>
-        <button onclick='hireService(1)'>Seleccionar</button>
-    </div>
-{% endfor %}
-    
-{% endblock %}
+{% extends 'front/layout.html' %} {% block title %}Panel de Automatizaciones{%
+endblock %} {% block body %} {% for service in services %}
+<div class="card">
+  <h2>{{service.title}}</h2>
+  <p>
+    {{service.description}}
+    <button onclick="window.location.href = '/services/{{service.id}}';">
+      Seleccionar
+    </button>
+  </p>
+</div>
+{% endfor %} {% endblock %}
