@@ -1,5 +1,12 @@
-{% if not loggedin %}
-    {% extends 'front/login.html' %}
-{% else %}
-    {% extends 'front/services.html' %}
-{% endif %}
+{% extends 'front/layout.html' %}
+{% block title %}Panel de Automatizaciones{% endblock %}
+{% block body %}
+{% for service in services %}
+    <div class='card'>
+        <h2>rdges</h2>
+        <p>sdfgp>
+        <button onclick='hireService(1)'>Seleccionar</button>
+    </div>
+{% endfor %}
+    
+{% endblock %}
