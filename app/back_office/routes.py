@@ -7,4 +7,12 @@ from . import back_bp
 
 @back_bp.route('/admin')
 def home():
-    return render_template('back/index.html')
+    
+    if not existeAdmin:
+        return redirect(url_for('back_office.login'))
+    else:
+        return render_template('back/index.html')
+
+@back_bp.route('/register')
+def register():
+    return render_template('back/register.html')

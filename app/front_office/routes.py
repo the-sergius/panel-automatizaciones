@@ -18,6 +18,11 @@ def services(id):
         services = [{'title': 'Panel de Automatizaciones', 'description': 'Panel de Automatizaciones', 'id': 1},{'title': 'Panel de Automatizaciones', 'description': 'Panel de Automatizaciones', 'id': 2}]
         return render_template('front/index.html', services=services)
 
-@front_bp.route('/login/')
+@front_bp.route('/login')
 def login():
     return render_template('front/login.html')
+
+@front_bp.route('/login' , methods=['POST'])
+def login_post():
+    #TODO Verificar contraseña en bd
+    return redirect(url_for('front_office.services'))
