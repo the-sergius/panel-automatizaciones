@@ -1,8 +1,12 @@
 from flask import Flask
 
-def create_app():
+from flask_alchemy import SQLAlchemy
+
+def create_app():    
     app = Flask(__name__)
-    
+    app.config["localhost"] = "mysql:///root@localhost/panel_automatizaciones.db" #CON DATOS REALES SUSTITUIR POR CONSTANTE DE ENTORNO
+    db = SQLAlchemy(app)
+    print(str(db.Usuario.query.all()))
     # Registrar los Blueprints
     from app.front_office import front_bp
     from app.back_office import back_bp

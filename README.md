@@ -1,1 +1,1 @@
-Panel de automatizaciones Python con Flask similar a Streamlit para aprender Python, Flask y SQL
+Panel de automatizaciones Python con Flask similar a Streamlit hecho con Python, Flask y SQL
