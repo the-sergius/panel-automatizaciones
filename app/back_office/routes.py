@@ -7,7 +7,7 @@ from . import back_bp
 
 @back_bp.route('/admin')
 def home():
-    
+    existeAdmin = True
     if not existeAdmin:
         return redirect(url_for('back_office.login'))
     else:

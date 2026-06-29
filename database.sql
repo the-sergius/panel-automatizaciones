@@ -14,3 +14,11 @@ CREATE TABLE IF NOT EXISTS servicios (
     nombre_servicio VARCHAR(50) NOT NULL,
     descripcion_servicio VARCHAR(200) NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS servicios_usuarios(
+    id_servicio_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_servicio INT NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
+    FOREIGN KEY (id_servicio) REFERENCES servicios(id_servicio)
+);
